@@ -97,36 +97,29 @@ class VehicleVersionAdmin(admin.ModelAdmin):
 class VehicleAdmin(admin.ModelAdmin):
 
     list_display = [
-        "manufacturer",
+        "id",
         "model",
-        "version",
     ]
 
     list_display_links = [
-        "manufacturer",
+        "id",
         "model",
-        "version",
     ]
     
     list_filter = [
-        "manufacturer",
         "model",
     ]
 
     search_fields = [
-        "manufacturer",
         "model",
-        "version",
+        "model__manufacturer",
+        "model__model",
     ]
 
     list_select_related = [
-        "manufacturer",
         "model",
-        "version",
     ]
 
     autocomplete_fields = [
-        "manufacturer",
         "model",
-        "version",
     ]
