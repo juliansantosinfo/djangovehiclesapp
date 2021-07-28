@@ -44,7 +44,6 @@ class VehicleModelAdmin(admin.ModelAdmin):
 
     list_filter = [
         "manufacturer",
-        "year",
     ]
     
     search_fields = [
@@ -75,8 +74,7 @@ class VehicleVersionAdmin(admin.ModelAdmin):
     ]
     
     list_filter = [
-        "name",
-        "model",
+        "model__manufacturer",
     ]
 
     search_fields = [
