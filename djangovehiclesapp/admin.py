@@ -65,11 +65,13 @@ class VehicleModelAdmin(admin.ModelAdmin):
 class VehicleVersionAdmin(admin.ModelAdmin):
 
     list_display = [
+        "id",
         "model",
         "name",
     ]
 
     list_display_links = [
+        "id",
         "model",
         "name",
     ]
@@ -100,21 +102,24 @@ class VehicleAdmin(admin.ModelAdmin):
     list_display = [
         "id",
         "model",
+        "board",
+        "color",
     ]
 
     list_display_links = [
         "id",
         "model",
+        "board",
+        "color",
     ]
     
     list_filter = [
-        "model",
     ]
 
     search_fields = [
-        "model",
-        "model__manufacturer",
-        "model__model",
+        "model__manufacturer__name",
+        "model__model__name",
+        "name",
     ]
 
     list_select_related = [
