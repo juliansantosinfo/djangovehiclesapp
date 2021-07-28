@@ -188,7 +188,9 @@ class Vehicle(models.Model):
 
     photo = models.ImageField(
         verbose_name="Foto",
-        upload_to="",
+        upload_to="uploads/vehicles/photos/",
+        blank=True,
+        null=True,
     )
     
     def __str__(self):

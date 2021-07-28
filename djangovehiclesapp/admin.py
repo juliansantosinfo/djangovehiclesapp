@@ -47,8 +47,9 @@ class VehicleModelAdmin(admin.ModelAdmin):
     ]
     
     search_fields = [
-        "manufacturer",
+        "manufacturer__name",
         "name",
+        "year",
     ]
 
     list_select_related = [
@@ -64,13 +65,13 @@ class VehicleModelAdmin(admin.ModelAdmin):
 class VehicleVersionAdmin(admin.ModelAdmin):
 
     list_display = [
-        "name",
         "model",
+        "name",
     ]
 
     list_display_links = [
-        "name",
         "model",
+        "name",
     ]
     
     list_filter = [
@@ -79,7 +80,9 @@ class VehicleVersionAdmin(admin.ModelAdmin):
 
     search_fields = [
         "name",
-        "model",
+        "model__manufacturer__name",
+        "model__name",
+        "model__year",
     ]
 
     list_select_related = [

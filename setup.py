@@ -19,7 +19,7 @@ setup(
         'Download': 'https://github.com/juliansantosinfo/djangovehiclesapp/archive/0.0.1.zip'
     },
     install_requires=[
-        'djangosimplemodels',
+        'Pillow',
     ],
     license = 'MIT',
     keywords = 'vehicles app django',
